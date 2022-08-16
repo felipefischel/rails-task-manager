@@ -1,0 +1,16 @@
+<%= link_to "Edit", edit_task_path, data: {turbo_method: :edit} %>
+
+
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<h1><%= '✅' * @task.completed %></h1>
+
+
+<%= link_to "Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+
+<p>
+  <%= link_to "Go back", tasks_path %>
+</p>
